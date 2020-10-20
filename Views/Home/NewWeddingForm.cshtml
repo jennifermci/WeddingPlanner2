@@ -1,0 +1,42 @@
+@model Wedding;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Wedding</title>
+</head>
+<body>
+    <div>
+        <h1>Plan Your Wedding</h1>
+        <a href="dashboard">Dashboard</a>
+        <a href="logOut">Log out</a>
+
+        <form asp-action="AddWedding" asp-controller="Home" method="POST">
+            <input type="hidden" value="@ViewBag.UserId" asp-for="CreatorId">
+            <br>
+            <span asp-validation-for="WedderOne"></span>
+            <label asp-for="WedderOne">Wedder One:</label>
+            <input asp-for="WedderOne">
+            <br>
+            <span asp-validation-for="WedderTwo"></span>
+            <label asp-for="WedderTwo">Wedder Two:</label>
+            <input asp-for="WedderTwo">
+            <br>
+            <span asp-validation-for="Date"></span>
+            <label asp-for="Date">Date:</label>
+            <input asp-for="Date">
+            <br>
+            <span asp-validation-for="WeddingAddress"></span>
+            <label asp-for="WeddingAddress">Wedding Address:</label>
+            <input asp-for="WeddingAddress">
+            <br>
+            <input type="submit" value="Create">
+
+        </form>
+
+    </div>
+    
+</body>
+</html>

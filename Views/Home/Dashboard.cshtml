@@ -1,0 +1,72 @@
+@model Wrapper;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div>
+        <h1>Welcome @Model.User.FirstName, to the Wedding Planner</h1>
+        <a href="/logOut">Log Out</a>
+
+        <table>
+            <thead>
+                <th>Wedding</th>
+                <th>Date</th>
+                <th>Guest Count</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                @foreach (var something in @Model.WeddingList )
+                {
+                    <tr>
+                        <td><a href="@something.WeddingId">@something.WedderOne & @something.WedderTwo</a></td>
+                        <td>@something.Date</td>
+                        <td>@something.RSVPList.Count</td>
+                        @if(@Model.User.UserId == something.CreatorId)
+                        {
+                            <form asp-controller="Home" asp-action="DeleteWedding" method="post">
+                                <input type="hidden" asp-for="@Model.Wedding.WeddingId" value="@something.WeddingId"/>
+                                <td><input type="submit" value="Delete"/></td>
+                            </form>
+                        }
+                        else
+                        {
+                            bool included = false;
+                            foreach(var rsvp in something.RSVPList)
+                            {
+                                if(@Model.User.UserId == rsvp.UserId)
+                                {
+
+                                    <form asp-controller="Home" asp-action="UnRSVPWedding" asp-route-UserId="@Model.User.UserId" method="post">
+                                        <input type="hidden" asp-for="@Model.Wedding.WeddingId" value="@something.WeddingId"/>
+                                        <td><input type="submit" value="Un-RSVP"/></td>
+                                    </form>
+                                    included = true;
+                                }
+
+                            }
+                            if(included == false)
+                            {
+
+                                <form asp-controller="Home" asp-action="RSVPWedding" asp-route-UserId="@Model.User.UserId" method="post">
+                                    <input type="hidden" asp-for="@Model.Wedding.WeddingId" value="@something.WeddingId"/>
+                                    <td><input type="submit" value="RSVP"/></td>
+                                </form>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <form asp-action="NewWeddingForm" asp-controller="Home" method="get">
+            <input type="submit" value="New Wedding">
+        </form>
+
+    </div>
+    
+</body>
+</html>

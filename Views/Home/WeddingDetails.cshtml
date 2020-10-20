@@ -1,0 +1,32 @@
+@model Wrapper;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Details!</title>
+</head>
+<body>
+    <div>
+        <h1>@Model.Wedding.WedderOne @Model.Wedding.WedderTwo Wedding!</h1>
+        <a href="dashboard">Dashboard</a>
+        <a href="logOut">Log out</a>
+    </div>
+    <h2>Date: @Model.Wedding.Date</h2>
+    <h3>Guests</h3>
+    <ul>
+        @foreach(var guest in @Model.Wedding.RSVPList)
+        {
+            <li>@guest.User.FirstName @guest.User.LastName</li>
+        }
+    </ul>
+
+        @* AIzaSyD7zP1OZqgyWOHy9ALazSLDV3LiKzC_WuE *@
+    <div>
+        <iframe width="600" height="450" frameborder="0" style="border:0"
+        src="https://www.google.com/maps/embed/v1/place?q=@ViewBag.Address&key=AIzaSyD7zP1OZqgyWOHy9ALazSLDV3LiKzC_WuE" allowfullscreen></iframe>
+    </div>
+    
+</body>
+</html>
