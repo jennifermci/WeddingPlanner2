@@ -1,4 +1,8 @@
-Migrations/
-bin/
-obj/
-appsettings.json/
+#ignore the migrations folder
+/Migrations
+#ignore the bin folder
+/bin
+#ignore the obj folder
+/obj
+#ignore the .json file
+/appsettings.json
