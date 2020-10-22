@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jenny\\OneDrive\\Desktop\\weddingPlanner\\WeddingPlanner\\WeddingPlanner.csproj": {}
+    "/var/www/WeddingPlanner2/WeddingPlanner.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jenny\\OneDrive\\Desktop\\weddingPlanner\\WeddingPlanner\\WeddingPlanner.csproj": {
+    "/var/www/WeddingPlanner2/WeddingPlanner.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jenny\\OneDrive\\Desktop\\weddingPlanner\\WeddingPlanner\\WeddingPlanner.csproj",
+        "projectUniqueName": "/var/www/WeddingPlanner2/WeddingPlanner.csproj",
         "projectName": "WeddingPlanner",
-        "projectPath": "C:\\Users\\jenny\\OneDrive\\Desktop\\weddingPlanner\\WeddingPlanner\\WeddingPlanner.csproj",
-        "packagesPath": "C:\\Users\\jenny\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jenny\\OneDrive\\Desktop\\weddingPlanner\\WeddingPlanner\\obj\\",
+        "projectPath": "/var/www/WeddingPlanner2/WeddingPlanner.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/var/www/WeddingPlanner2/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\jenny\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -69,7 +69,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.403/RuntimeIdentifierGraph.json"
         }
       }
     }
